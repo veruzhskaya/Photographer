@@ -228,6 +228,15 @@ h4 {
   letter-spacing: 3px;
   margin-top: 30px;
 }
+.arrow_btn {
+  display: flex;
+  justify-content: center;
+}
+.open_close {
+  border: none;
+  width: 15%;
+  background-color: #F5F2F1;
+}
 .cont {
   display: flex;
   justify-content: center;

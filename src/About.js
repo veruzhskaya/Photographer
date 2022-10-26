@@ -1,15 +1,30 @@
 import { useState } from 'react'
 import { dataDescribe } from './data'
 import './App.css'
+import up from './up.png'
+import down from './down.png'
 
 function About() {
     const [events, setEvents] = useState(dataDescribe);
     const [showText, setShowText] = useState (false);
+    const [upDown, setUpDown] = useState (true);
     const showTextClick = (element) => {
         element.showMore =!element.showMore;
         setShowText (!showText);
     }
     
+const openContent = () => {
+    
+    if (events === dataDescribe) {
+        setEvents ([])
+        
+    }
+    else {
+        setEvents (dataDescribe)
+    }
+    setUpDown (!upDown)
+}
+
     return(
     <div>
     <div className="head">
@@ -42,6 +57,9 @@ function About() {
             );
         }))}
     
+    </div>
+    <div className='arrow_btn'>
+        <button className='open_close' onClick={openContent}>{upDown ? <img src={up} alt="up"/> : <img src={down} alt="down"/>}</button>
     </div>
     <div className='head'> 
         <h4>Просмотрите мои работы, сформируйте стиль и выражение, которые вы хотите увидеть на своих  фотографиях, расскажите мне о своих предпочтениях и пожеланиях!</h4>
