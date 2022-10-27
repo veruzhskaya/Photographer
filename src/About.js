@@ -46,11 +46,11 @@ const openContent = () => {
         <h3>Ваша история моими глазами...</h3>
     </div>
     <div className='about'>
-        {events.map ((element => {
+        {events.map (((element, index) => {
             const {picture, describtion, showMore} = element;
             
             return (
-             <div className="container_description" key={ picture }>
+             <div className="container_description" key={ index }>
                  <img className='image_description'  src={ picture } alt="events"/>
                  <p className='par_description'>{showMore ? describtion: describtion.substring(0,116)+ "..."} <button className='show' onClick={() => showTextClick (element)}>{showMore ? "свернуть": "подробнее"}</button></p>
              </div>
