@@ -3,7 +3,7 @@ function MyPhoto({works}) {
     return(          
        <div className="container">
         {works.map (((element, index) => {
-            const {name, searchTerm, image} = element;
+            const {name, image} = element;
             return (
             <div key={index} className="container_image" >
               <img className="myphoto" src={image} alt="mywork"/>
